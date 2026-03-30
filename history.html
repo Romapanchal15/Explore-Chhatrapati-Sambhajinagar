@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>History - Chhatrapati Sambhajinagar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI;
+        }
+
+        /* BACKGROUND */
+        body {
+            background: url("./Photos/kranti-chowk-1.jpg") center/cover no-repeat fixed;
+            position: relative;
+        }
+
+        /* DARK OVERLAY */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        .wrapper {
+            padding-bottom: 50px;
+        }
+
+        /* NAVBAR */
+        nav {
+            text-align: center;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 120px 20px 80px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 20px;
+            color: #ddd;
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 100px;
+            margin: 40px auto;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+            color: orange;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .culture-cards {
+            display: flex;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* INDIVIDUAL CARD */
+        .culture-card {
+            flex: 1;
+            min-width: 220px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        /* HOVER EFFECT */
+        .culture-card:hover {
+            transform: translateY(-8px);
+            background: #fff3e0;
+        }
+
+        /* HEADING */
+        .culture-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        /* TEXT */
+        .culture-card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* INFO BOX */
+        .info-box {
+            background: #fff3e0;
+            padding: 20px;
+            border-left: 6px solid orange;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .foundation-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* TEXT */
+        .foundation-text {
+            flex: 1;
+        }
+
+        /* IMAGE */
+        .foundation-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .foundation-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: 0.4s;
+        }
+
+        /* HOVER EFFECT */
+        .foundation-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .foundation-container {
+                flex-direction: column;
+            }
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+
+        th {
+            background: orange;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #ffe0b2;
+        }
+
+        .spiritual-images {
+            display: flex;
+            gap: 25px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* IMAGE BOX */
+        .img-box {
+            text-align: center;
+        }
+
+        /* IMAGE STYLE */
+        .img-box img {
+            width: 100%;
+            max-width: 320px;
+            height: 200px;
+            object-fit: cover;
+
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+
+            transition: 0.4s;
+        }
+
+        /* HOVER EFFECT */
+        .img-box img:hover {
+            transform: scale(1.08);
+        }
+
+        /* CAPTION */
+        .img-box p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .spiritual-box {
+            margin-top: 25px;
+            padding: 22px;
+
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 6px solid #d97706;
+
+            border-radius: 12px;
+
+            font-size: 17px;
+            line-height: 1.7;
+            color: #4a2c00;
+
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+        /* SUBTLE GLOW EFFECT */
+        .spiritual-box::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 165, 0, 0.2);
+            border-radius: 50%;
+            top: -30px;
+            right: -30px;
+        }
+
+        /* HOVER EFFECT */
+        .spiritual-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* CARDS */
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 220px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* TIMELINE */
+        .timeline div {
+            background: white;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-left: 5px solid orange;
+            border-radius: 8px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 50px auto;
+            padding-left: 30px;
+            border-left: 4px solid orange;
+        }
+
+        /* EACH ITEM */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        /* DOT */
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -11px;
+            top: 10px;
+            width: 18px;
+            height: 18px;
+            background: orange;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        /* CONTENT BOX */
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        /* HOVER EFFECT */
+        .timeline-content:hover {
+            transform: translateX(8px);
+            background: #fff8f0;
+        }
+
+        /* TITLE */
+        .timeline-content h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* TEXT */
+        .timeline-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- NAVBAR -->
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="#">📜 History</a></li>
+                <li><a href="tourism.html">🌍 Tourism</a></li>
+                <li><a href="#">🍛 Food</a></li>
+                <li><a href="#">📷 Gallery</a></li>
+            </ul>
+        </nav>
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>📜 History of Sambhajinagar</h1>
+            <p>Exploring centuries of heritage, power and culture</p>
+        </div>
+
+        <!-- INTRO -->
+        <section>
+            <h2>📍 Introduction</h2>
+            <p>
+                Chhatrapati Sambhajinagar, formerly known as Aurangabad, is one of the most historically
+                significant cities in the state of Maharashtra, India. Located in the central part of the state,
+                the city has played a crucial role in shaping the cultural, political, and architectural history
+                of the Deccan region. It is widely known for its rich heritage, ancient monuments, and unique
+                blend of Mughal and Maratha influences.
+            </p>
+
+            <p>
+                The city was founded in 1610 by Malik Ambar, a prominent statesman of the Ahmadnagar Sultanate.
+                Over time, it developed into a major administrative and military center. During the Mughal era,
+                it gained immense importance when Emperor Aurangzeb made it his capital in the Deccan. This period
+                saw the construction of several iconic monuments, including Bibi Ka Maqbara and Panchakki, which
+                still stand as symbols of architectural brilliance.
+            </p>
+
+            <p>
+                Chhatrapati Sambhajinagar is also closely associated with the Maratha Empire and is named after
+                Chhatrapati Sambhaji Maharaj, the son of Chhatrapati Shivaji Maharaj. The city reflects a deep
+                connection to Maratha history and valor, making it culturally and historically significant.
+            </p>
+
+            <p>
+                Today, the city is not only known for its historical importance but also as a growing industrial,
+                educational, and tourism hub. It is located near two UNESCO World Heritage Sites — Ajanta and
+                Ellora caves — which attract visitors from all over the world. With its combination of ancient
+                heritage and modern development, Chhatrapati Sambhajinagar stands as a perfect example of a city
+                where history and progress coexist.
+            </p>
+
+            <div class="info-box">
+                ✨ Known as the <b>"City of Gates"</b> due to the presence of more than 50 historic gates built for
+                defense and security.
+            </div>
+        </section>
+
+        <!-- FOUNDATION -->
+        <section class="foundation-section">
+
+            <h2>🏗 Foundation of the City</h2>
+
+            <div class="foundation-container">
+
+                <div class="foundation-text">
+                    <p>
+                        Chhatrapati Sambhajinagar was founded in 1610 by Malik Ambar,
+                        a brilliant administrator and military strategist of the Ahmadnagar Sultanate.
+                        Initially named <b>Khadki</b>, the city was carefully planned to serve as a strong
+                        administrative and military base in the Deccan region.
+                    </p>
+
+                    <p>
+                        Malik Ambar is especially known for his advanced urban planning and water management
+                        systems. He introduced an efficient irrigation system known as the <b>Naher-e-Ambari</b>,
+                        which supplied water to the city through underground channels — a remarkable engineering
+                        achievement for that time.
+                    </p>
+
+                    <p>
+                        Due to its strategic location and strong infrastructure, the city quickly gained
+                        importance and later became a major center during the Mughal period.
+                    </p>
+
+                    <div class="info-box">
+                        💡 Malik Ambar is remembered as one of the finest planners in medieval Indian history.
+                    </div>
+                </div>
+
+                <!-- IMAGE -->
+                <div class="foundation-image">
+                    <img src="./Photos/malik-ambar.jpg" alt="Malik Ambar">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TABLE -->
+        <section>
+            <h2>👑 Dynasties & Contributions</h2>
+
+            <table>
+                <tr>
+                    <th>Period ⏳</th>
+                    <th>Ruler 👑</th>
+                    <th>Contribution 🏗</th>
+                </tr>
+
+                <tr>
+                    <td>1610</td>
+                    <td>Malik Ambar</td>
+                    <td>Founded city and water system</td>
+                </tr>
+
+                <tr>
+                    <td>17th Century</td>
+                    <td>Mughal Empire</td>
+                    <td>Capital of Deccan & monuments</td>
+                </tr>
+
+                <tr>
+                    <td>18th Century</td>
+                    <td>Maratha Empire</td>
+                    <td>Regional cultural growth</td>
+                </tr>
+
+                <tr>
+                    <td>Modern</td>
+                    <td>India</td>
+                    <td>Industrial & tourism hub</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <section class="spiritual-section">
+
+            <h2>🛕 Spiritual Significance</h2>
+
+            <p>
+                Chhatrapati Sambhajinagar is not only known for its history and culture but also for its
+                deep spiritual importance. The region is home to several ancient temples and sacred sites
+                that attract devotees from all over India.
+            </p>
+
+            <p>
+                It is widely believed that Lord Shiva (Mahadev) resided in the caves of Verul, also known
+                as the Ellora Caves. These caves are not just architectural wonders but are also considered
+                spiritually powerful places.
+            </p>
+
+            <!-- IMAGE ROW -->
+            <div class="spiritual-images">
+
+                <div class="img-box">
+                    <img src="./Photos/ellora-hd.webp" alt="Ellora Caves" height="250px" width="250px">
+                    <p>Ellora Caves (Verul Leni)</p>
+                </div>
+
+                <div class="img-box">
+                    <img src="./Photos/grishneshwar-jyotrling.jpg" alt="Grishneshwar Temple" height="250px" width="250px">
+                    <p>Grishneshwar Jyotirlinga Temple</p>
+                </div>
+
+            </div>
+            <p>
+                According to ancient beliefs and local traditions, the region of Verul (Ellora) is closely
+                associated with Lord Shiva (Mahadev) and Goddess Parvati. It is believed that Mahadev chose
+                this sacred place as a site for meditation and divine presence, making it spiritually powerful
+                for devotees.
+            </p>
+
+            <p>
+                The magnificent Kailasa Temple at Ellora, carved out of a single rock, is dedicated to Lord Shiva
+                and is considered one of the greatest examples of ancient Indian architecture. It is said that
+                the temple represents Mount Kailash, the heavenly abode of Mahadev and Parvati.
+            </p>
+
+            <p>
+                Devotees believe that the presence of Mahadev and Parvati in this region blesses the land with
+                peace, strength, and spiritual energy. Many pilgrims visit not only to witness the architectural
+                beauty but also to experience a deep sense of devotion and connection with the divine.
+            </p>
+
+            <p>
+                The nearby Grishneshwar Jyotirlinga further strengthens this belief, as it is one of the twelve
+                sacred Jyotirlingas of Lord Shiva. According to mythology, worshipping here brings prosperity
+                and spiritual growth.
+            </p>
+            <p>
+                The nearby Grishneshwar Temple, one of the twelve Jyotirlingas, holds great religious
+                significance. Thousands of devotees visit this temple every year to seek blessings.
+            </p>
+
+            <div class="spiritual-box">
+                🕉 It is believed that Ellora represents the divine home of Mahadev and Parvati, symbolizing
+                eternal power, devotion, and harmony.
+            </div>
+    </div>
+
+    </section>
+
+    <!-- EVENTS -->
+    <section>
+        <h2>🕰 Key Events</h2>
+
+        <div class="cards">
+            <div class="card">📅 1610 - Founded</div>
+            <div class="card">🏰 1653 - Renamed Aurangabad</div>
+            <div class="card">⚔ 1707 - Mughal decline</div>
+            <div class="card">🏛 2023 - Renamed Sambhajinagar</div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section>
+        <h2>📜 Historical Timeline</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>📅 1610</h3>
+                    <p>Foundation of the city by Malik Ambar, originally named Khadki.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>🏰 1653</h3>
+                    <p>City renamed Aurangabad when Aurangzeb made it his Deccan capital.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>⚔ 1707</h3>
+                    <p>Decline of Mughal power after the death of Aurangzeb.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>🏛 18th Century</h3>
+                    <p>Rise of Maratha influence and cultural development in the region.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>🏙 Modern Era</h3>
+                    <p>Growth as an industrial, educational, and tourism hub.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>📍 2023</h3>
+                    <p>Officially renamed Chhatrapati Sambhajinagar.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CULTURE -->
+
+    <section>
+
+        <h2>🎭 Cultural Importance</h2>
+
+        <p>
+            Chhatrapati Sambhajinagar is a vibrant cultural center that reflects a unique blend of
+            Mughal and Maratha traditions. The city showcases a rich heritage through its architecture,
+            festivals, languages, and daily lifestyle of its people.
+        </p>
+
+        <p>
+            The influence of the Mughal era can be seen in monuments like Bibi Ka Maqbara and Panchakki,
+            while the Maratha legacy is reflected in the traditions, values, and historical pride associated
+            with Chhatrapati Sambhaji Maharaj. This combination creates a diverse and culturally rich identity.
+        </p>
+
+        <p>
+            The city is also known for its vibrant festivals such as Diwali, Eid, and Ganesh Chaturthi,
+            which are celebrated with great enthusiasm and unity. These festivals bring people together
+            and reflect the harmony between different communities.
+        </p>
+
+        <p>
+            Sambhajinagar is also famous for its traditional arts, handicrafts, and cuisine. Local dishes
+            like Naan Qalia and Shahi Tukda represent the Mughlai influence, while regional Maharashtrian
+            flavors add diversity to the food culture.
+        </p>
+
+        <!-- HIGHLIGHT BOX -->
+        <div class="info-box">
+            🌍 The city stands as a symbol of unity in diversity, where different cultures and traditions coexist
+            peacefully.
+        </div>
+
+        <!-- CULTURE CARDS -->
+        <div class="culture-cards">
+
+            <div class="culture-card">
+                🏛 <h3>Architecture</h3>
+                <p>Mughal monuments and Maratha structures define the city's heritage.</p>
+            </div>
+
+            <div class="culture-card">
+                🎉 <h3>Festivals</h3>
+                <p>Celebrations like Diwali, Eid, and Ganesh Festival unite communities.</p>
+            </div>
+
+            <div class="culture-card">
+                🍛 <h3>Cuisine</h3>
+                <p>A mix of Mughlai and Maharashtrian food traditions.</p>
+            </div>
+
+            <div class="culture-card">
+                🧵 <h3>Handicrafts</h3>
+                <p>Known for Himroo and Paithani textiles.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="info-box">
+        🌍 One of the top tourism hubs in Maharashtra.
+    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Sambhajinagar History Page</p>
+    </footer>
+
+    </div>
+
+</body>
+
+</html>
