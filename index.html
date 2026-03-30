@@ -1,64 +1,830 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Tourism in Chhatrapati Sambhajinagar</title>
-<link rel="stylesheet" href="style.css">
+
+
+
+    <title>Explore Chhatrapati Sambhajinagar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI;
+            scroll-behavior: smooth;
+        }
+
+        /* BACKGROUND */
+
+        body {
+            background: url("./Photos/kranti-chowk-1.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* WRAPPER */
+
+        .wrapper {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(6px);
+        }
+
+        /* NAVBAR */
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        /* HERO SLIDER */
+
+        .hero {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+
+            animation: slideShow 20s infinite;
+        }
+
+        /* Slide 1 */
+
+        .slide:nth-child(1) {
+            background-image: url("./Photos/daulatabad-fort-1.jpg");
+            animation-delay: 0s;
+        }
+
+        /* Slide 2 */
+
+        .slide:nth-child(2) {
+            background-image: url("./Photos/kranti-chowk-1.jpg");
+            animation-delay: 5s;
+        }
+
+        /* Slide 3 */
+
+        .slide:nth-child(3) {
+            background-image: url("./Photos/ellora-sunset.jpg");
+            animation-delay: 10s;
+        }
+
+        /* Slide 4 */
+
+        .slide:nth-child(4) {
+            background-image: url("./Photos/bibi-ka-maqbara-hd.avif");
+            animation-delay: 15s;
+        }
+
+        /* Animation */
+
+        @keyframes slideShow {
+
+            0% {
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        .about-title {
+            color: orange;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+
+        /* HERO TEXT */
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            color: #222;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 80px 120px;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 34px;
+        }
+
+        .famous-tourist {
+            color: orange;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        /* GRID */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        /* CARDS */
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .city-highlights {
+            color: orange;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat {
+            background: white;
+            padding: 30px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat h3 {
+            font-size: 40px;
+            color: #ff6b6b;
+        }
+
+        .gallery {
+            color: orange;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+
+        .tourist-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Tourist card alignment */
+
+        .tourist-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Heading style */
+
+        .tourist-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Description */
+
+        .tourist-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Hover effect */
+
+        .tourist-card:hover img {
+            transform: scale(1.05);
+            transition: 0.4s;
+        }
+
+        .history-section {
+            background: rgba(255, 255, 255, 0.75);
+            margin: 60px 0;
+            padding: 80px 120px;
+            border-radius: 12px;
+        }
+
+        /* Heading */
+
+        .history-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        /* Cards inside history */
+
+        .history-section .card {
+            background: rgba(253, 165, 2, 0.766);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+        }
+
+        /* Card hover */
+
+        .history-section .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Card heading */
+
+        .history-section .card h3 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        /* Card paragraph */
+
+        .history-section .card p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+
+        .food-section {
+            background: rgba(255, 255, 255, 0.75);
+            margin: 60px 0;
+            padding: 80px 120px;
+            border-radius: 12px;
+        }
+
+        /* Section title */
+
+        .food-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 50px;
+        }
+
+        /* Food card image */
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Food card */
+
+        .food-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Food title */
+
+        .food-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Food description */
+
+        .food-card p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Hover effect */
+
+        .food-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            transition: 0.4s;
+        }
+
+
+        .travel-section {
+            background: rgba(255, 255, 255, 0.75);
+            margin: 60px 0;
+            padding: 80px 120px;
+            border-radius: 12px;
+        }
+
+        /* Section heading */
+
+        .travel-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 50px;
+        }
+
+        /* Travel cards */
+
+        .travel-section .card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+        }
+
+        /* Icon size */
+
+        .travel-section .card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        /* Paragraph */
+
+        .travel-section .card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Hover effect */
+
+        .travel-section .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+            background: #f8fbff;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            width: 250px;
+            border-radius: 10px;
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 70px 120px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-grid h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-grid p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .footer-grid a {
+            display: block;
+            text-decoration: none;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+    </style>
+
 </head>
 
 <body>
 
-<header>
-<h1>Heritage Of Chattrapati Sambhajinagar</h1>
-<p>Explore the Historical City of Maharashtra</p>
-</header>
+    <div class="wrapper">
 
-<nav>
-<a href="index.html">Home</a>
-<a href="historical.html">Historical Places</a>
-<a href="religious.html">Religious Places</a>
-<a href="nature.html">Nature & Gardens</a>
-<a href="about.html">About</a>
-</nav>
+        <!-- NAVBAR -->
 
-<div class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Tourism</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
 
-<div class="card">
-<h2>Welcome to Chhatrapati Sambhajinagar</h2>
+        <!-- HERO SLIDER -->
 
-<p>
-Chhatrapati Sambhajinagar is one of the most historically significant cities in Maharashtra.
-The city is known for its rich heritage, Mughal architecture, ancient caves,
-and cultural importance. It serves as the gateway to the famous Ajanta and Ellora caves.
-</p>
+        <div class="hero">
 
-<p>
-Tourists from around the world visit the city to explore its monuments,
-temples, gardens, and historical forts. The city offers a unique
-combination of history, culture, spirituality, and natural beauty.
-</p>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
 
-</div>
+            <div class="hero-text">
 
-<div class="card">
+                <h1>🏰 Explore Chhatrapati Sambhajinagar</h1>
+                <p>The Historic City of Gates 🏛</p>
 
-<h2>Why Visit the City?</h2>
+            </div>
 
-<ul>
-<li>Home to UNESCO World Heritage Sites</li>
-<li>Ancient Buddhist rock-cut caves</li>
-<li>Historic Mughal monuments</li>
-<li>Beautiful temples and gardens</li>
-<li>Rich culture and heritage</li>
-<li>Nearby forts and scenic locations</li>
-</ul>
+        </div>
 
-</div>
+        <!-- ABOUT -->
 
-</div>
+        <section>
 
-<footer>
-<p>Tourism Website Project | Responsive Web Design</p>
-</footer>
+            <h2 class="about-title">📍 About the City</h2>
+
+            <div class="card">
+
+                <p>
+
+                    Chhatrapati Sambhajinagar is a historic city in Maharashtra known for its Mughal-era architecture,
+                    vibrant culture and proximity to the world-famous Ajanta and Ellora caves.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- TOURIST PLACES -->
+
+        <section>
+
+            <h2 class="famous-tourist">🌍 Famous Tourist Places</h2>
+
+            <div class="grid">
+
+                <div class="card tourist-card">
+
+                    <img src="./Photos/ajanta-caves-1.jpg">
+
+                    <h3>🗿 Ajanta Caves</h3>
+                    <p>Ancient Buddhist cave paintings and sculptures.</p>
+
+                </div>
+
+                <div class="card tourist-card">
+
+                    <img src="./Photos/ellora-caves-1.jpg">
+
+                    <h3>🏞 Ellora Caves</h3>
+                    <p>Rock-cut temples representing three religions.</p>
+
+                </div>
+
+                <div class="card tourist-card">
+
+                    <img src="./Photos/bibi-ka-maqbara-1.avif">
+
+                    <h3>🏰 Bibi Ka Maqbara</h3>
+                    <p>Known as the Taj of the Deccan.</p>
+
+                </div>
+                <div class="card tourist-card">
+
+                    <img src="./Photos/grishneshwar-jyotrling.jpg">
+
+                    <h3>🛕 Grishneshwar Temple</h3>
+                    <p>One of the 12 Jyotirlinga temples dedicated to Lord Shiva.</p>
+
+                </div>
+                <div class="card tourist-card">
+
+                    <img src="./Photos/daulatabad-fort-1.jpg">
+
+                    <h3>🏯 Devgiri Fort</h3>
+                    <p>A magnificent hill fort famous for its strong defense architecture.</p>
+
+                </div>
+
+                <div class="card tourist-card">
+
+                    <img src="./Photos/bhadra-maruti.webp">
+
+                    <h3>🙏 Bhadra Maruti Temple</h3>
+                    <p>A famous temple dedicated to Lord Hanuman located near Khuldabad.</p>
+
+                </div>
+
+                <div class="card tourist-card">
+
+                    <img src="./Photos/panchakki.jpg">
+
+                    <h3>💧 Panchakki</h3>
+                    <p>A historic water mill built in the Mughal era.</p>
+
+                </div>
+
+                <div class="card tourist-card">
+
+                    <img src="./Photos/siddharth-garden.webp">
+
+                    <h3>🌳 Siddharth Garden</h3>
+                    <p>A beautiful garden and zoo popular among families and tourists.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="history-section">
+
+            <h2>📜 History of the City</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>🏰 Mughal Era</h3>
+                    <p>
+                        The city was founded in 1610 by Malik Ambar and later became an important administrative center
+                        during the Mughal period.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>⚔ Maratha Influence</h3>
+                    <p>
+                        The region played an important role during the Maratha Empire and was named after the brave
+                        Maratha ruler Chhatrapati Sambhaji Maharaj.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🏙 Modern Development</h3>
+                    <p>
+                        Today Sambhajinagar is an industrial, educational and tourism hub attracting visitors from
+                        around the world.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CITY STATS -->
+
+        <section>
+
+            <h2 class="city-highlights">📊 City Highlights</h2>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>52+</h3>
+                    <p>Historic Gates 🚪</p>
+                </div>
+
+                <div class="stat">
+                    <h3>2</h3>
+                    <p>UNESCO Sites 🌍</p>
+                </div>
+
+                <div class="stat">
+                    <h3>400+</h3>
+                    <p>Years of History 📜</p>
+                </div>
+
+                <div class="stat">
+                    <h3>1M+</h3>
+                    <p>Visitors Yearly ✈</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="food-section">
+
+            <h2>🍛 Famous Local Food</h2>
+
+            <div class="grid">
+
+                <div class="card food-card">
+
+                    <img src="./Photos/naan-qalia.jpg">
+
+                    <h3>🍲 Naan Qalia</h3>
+                    <p>Traditional dish of Sambhajinagar served with naan.</p>
+
+                </div>
+
+                <div class="card food-card">
+
+                    <img src="./Photos/samosa-rice.jpeg">
+
+                    <h3>🍚 Samosa Rice</h3>
+                    <p>Aromatic rice dish loved by locals and tourists.</p>
+
+                </div>
+
+                <div class="card food-card">
+
+                    <img src="./Photos/shahi-tukda.jpg">
+
+                    <h3>🍮 Shahi Tukda</h3>
+                    <p>A sweet dessert popular in Mughlai cuisine.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="travel-section">
+
+            <h2>✈ Travel Information</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>🚆 By Train</h3>
+                    <p>Well connected railway station linking major Indian cities.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🛫 By Air</h3>
+                    <p>Airport connecting Sambhajinagar with major destinations.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🚌 By Road</h3>
+                    <p>Excellent highways connecting Pune, Mumbai and Nashik.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- GALLERY -->
+
+        <section>
+
+            <h2 class="gallery">📷 City Gallery</h2>
+
+            <div class="gallery">
+
+                <img src="./Photos/photo-gallery-1.jpg">
+                <img src="./Photos/photo-gallery-2.jpg">
+                <img src="./Photos/photo-gallery-3.jpg">
+                <img src="./Photos/photo-gallery-4.jpg">
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div class="footer-grid">
+
+                <div>
+                    <h3>🏰 About</h3>
+                    <p>Discover the heritage, culture and tourism of Sambhajinagar.</p>
+                </div>
+
+                <div>
+                    <h3>🌍 Quick Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">History</a>
+                    <a href="#">Tourism</a>
+                    <a href="#">Gallery</a>
+                </div>
+
+                <div>
+                    <h3>📍 Tourist Places</h3>
+                    <p>Ajanta Caves</p>
+                    <p>Ellora Caves</p>
+                    <p>Bibi Ka Maqbara</p>
+                    <p>Panchakki</p>
+                </div>
+
+                <div>
+                    <h3>📞 Contact</h3>
+                    <p>Maharashtra, India</p>
+                    <p>tourism@sambhajinagar.com</p>
+                    <p>+91 9876543210</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>© 2026 Explore Sambhajinagar Tourism Website</p>
+
+            </div>
+
+        </footer>
+
+    </div>
 
 </body>
+
 </html>
