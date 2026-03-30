@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Plan Your Trip - Sambhajinagar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI;
+        }
+
+        body {
+            background: url("./Photos/kranti-chowk-1.jpg") center/cover no-repeat fixed;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+        nav {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 90px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        .plan-section {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 15px;
+        }
+
+        .plan-day {
+            background: #fff3e0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .plan-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-day h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .plan-day ul {
+            padding-left: 20px;
+        }
+
+        .plan-day li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* FORM CONTAINER */
+        .form-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: orange;
+            margin-bottom: 30px;
+        }
+
+        /* INPUTS */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* CHECKBOX GROUP */
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            background: #fff3e0;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* BUTTON */
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, orange, #ff6b6b);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="history.html">📜 History</a></li>
+            <li><a href="tourism.html">🌍 Tourism</a></li>
+            <li><a href="#">🧭 Plan Trip</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🧭 Plan Your Perfect Trip</h1>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-container">
+
+        <h2>📝 Travel Planner Form</h2>
+
+        <form>
+
+            <!-- PERSONAL DETAILS -->
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>👤 Full Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+
+                <div class="input-group">
+                    <label>📧 Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>📱 Phone Number</label>
+                    <input type="text" placeholder="Enter phone number">
+                </div>
+
+                <div class="input-group">
+                    <label>👥 Number of Travelers</label>
+                    <input type="number">
+                </div>
+
+            </div>
+
+            <!-- TRIP DETAILS -->
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>📅 Travel Date</label>
+                    <input type="date">
+                </div>
+
+                <div class="input-group">
+                    <label>🕒 Duration</label>
+                    <select>
+                        <option>1 Day</option>
+                        <option>2 Days</option>
+                        <option>3 Days</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- BUDGET -->
+            <div class="input-group">
+                <label>💰 Budget</label>
+                <select>
+                    <option>Low (₹500–1500)</option>
+                    <option>Medium (₹1500–3000)</option>
+                    <option>Luxury (₹3000+)</option>
+                </select>
+            </div>
+
+            <!-- INTEREST -->
+            <div class="input-group">
+                <label>🎯 Interests</label>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> Heritage</label>
+                    <label><input type="checkbox"> Nature</label>
+                    <label><input type="checkbox"> Spiritual</label>
+                    <label><input type="checkbox"> Adventure</label>
+                    <label><input type="checkbox"> Food</label>
+                </div>
+            </div>
+
+            <!-- DESTINATIONS -->
+            <div class="input-group">
+                <label>📍 Select Destinations</label>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> Ajanta</label>
+                    <label><input type="checkbox"> Ellora</label>
+                    <label><input type="checkbox"> Bibi Ka Maqbara</label>
+                    <label><input type="checkbox"> Devgiri Fort</label>
+                    <label><input type="checkbox"> Lonar Lake</label>
+                    <label><input type="checkbox"> Mhaismal</label>
+                    <label><input type="checkbox"> Panchakki</label>
+                    <label><input type="checkbox"> Jayakwadi</label>
+                    <label><input type="checkbox"> Gautala Sanctuary</label>
+                </div>
+            </div>
+
+            <!-- NOTES -->
+            <div class="input-group">
+                <label>📝 Additional Notes</label>
+                <textarea rows="4" placeholder="Any special requests..."></textarea>
+            </div>
+
+            <!-- SUBMIT -->
+            <button class="btn">🚀 Generate Plan</button>
+
+        </form>
+    </div><br><br>
+
+    <div class="plan-section">
+
+        <h2>📅 Suggested 3-Day Travel Plan</h2>
+
+        <div class="plan-day">
+            <h3>🏰 Day 1 – City Exploration</h3>
+            <ul>
+                <li>📍 Bibi Ka Maqbara</li>
+                <li>💧 Panchakki</li>
+                <li>🗿 Aurangabad Caves / Buddha Leni</li>
+                <li>🌳 Siddharth Garden</li>
+                <li>🦢 Salim Ali Lake</li>
+                <li>🏛 Chhatrapati Shivaji Maharaj Museum</li>
+            </ul>
+        </div>
+
+        <div class="plan-day">
+            <h3>🗿 Day 2 – Heritage & Spiritual</h3>
+            <ul>
+                <li>🏞 Ellora Caves</li>
+                <li>🛕 Grishneshwar Jyotirlinga</li>
+                <li>🙏 Bhadra Maruti Temple</li>
+                <li>🏯 Devgiri Fort</li>
+                <li>🌄 Goga Baba Hill (Sunset)</li>
+            </ul>
+        </div>
+
+        <div class="plan-day">
+            <h3>🌄 Day 3 – Nature & Nearby</h3>
+            <ul>
+                <li>🎨 Ajanta Caves</li>
+                <li>🌊 Lonar Lake</li>
+                <li>💦 Jayakwadi Dam</li>
+                <li>🛕 Paithan (Sant Eknath Samadhi)</li>
+                <li>🌫 Mhaismal Hill Station</li>
+                <li>🌳 Gautala Wildlife Sanctuary</li>
+                <li>🛕 Newasa (Datta Mandir)</li>
+            </ul>
+        </div>
+
+    </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Sambhajinagar Travel Planner</p>
+    </footer>
+
+</body>
+
+</html>
