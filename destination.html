@@ -185,6 +185,32 @@
             background: rgba(255, 255, 255, 0.9);
             margin-top: 40px;
         }
+
+        @media (max-width: 1024px) {
+            section {
+                padding: 50px 60px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .foundation-container {
+                flex-direction: column;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 24px;
+            }
+        }
     </style>
 
 </head>
@@ -193,9 +219,12 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="history.html">📜 History</a></li>
-            <li><a href="#">🌍 Tourism</a></li>
+            <li><a href="./index.html">🏠 Home</a></li>
+            <li><a href="./history.html">📜 History</a></li>
+            <li><a href="destination.html">✈️ Destinations</a></li>
+            <li><a href="./plan-trip.html">🧭 Plan Trip</a></li>
+            <li><a href="./about.html"> ℹ️ About</a></li>
+            <li><a href="./contact.html">📞 Contact</a></li>
         </ul>
     </nav>
 

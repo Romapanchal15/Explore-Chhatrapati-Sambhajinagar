@@ -493,6 +493,33 @@
             border-top: 1px solid #ccc;
             padding-top: 20px;
         }
+
+        @media (max-width: 1024px) {
+            section {
+                padding: 60px 50px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
     </style>
 
 </head>
@@ -505,13 +532,12 @@
 
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./history.html">History</a></li>
-                <li><a href="destination.html">Destinations</a></li>
-                <li><a href="./plan-trip.html">Plan Trip</a></li>
-                <li><a href="#">Culture</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./index.html">🏠 Home</a></li>
+                <li><a href="./history.html">📜 History</a></li>
+                <li><a href="destination.html">✈️ Destinations</a></li>
+                <li><a href="./plan-trip.html">🧭 Plan Trip</a></li>
+                <li><a href="./about.html"> ℹ️ About</a></li>
+                <li><a href="./contact.html">📞 Contact</a></li>
             </ul>
         </nav>
 

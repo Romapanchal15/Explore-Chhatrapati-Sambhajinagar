@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About - Sambhajinagar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI;
+        }
+
+        body {
+            background: url("./Photos/kranti-chowk-1.jpg") center/cover no-repeat fixed;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+        nav {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 90px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        /* SECTION */
+        section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 15px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: orange;
+            margin-bottom: 25px;
+        }
+
+        section p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* FEATURES */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .box {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+        }
+
+        /* TEAM */
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .member {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .member img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 1024px) {
+            section {
+                padding: 50px 60px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .foundation-container {
+                flex-direction: column;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="./index.html">🏠 Home</a></li>
+            <li><a href="./history.html">📜 History</a></li>
+            <li><a href="destination.html">✈️ Destinations</a></li>
+            <li><a href="./plan-trip.html">🧭 Plan Trip</a></li>
+            <li><a href="./about.html"> ℹ️ About</a></li>
+            <li><a href="./contact.html">📞 Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1> About Sambhajinagar</h1>
+    </div>
+
+    <!-- ABOUT CITY -->
+    <section>
+        <h2>📍 About the City</h2>
+
+        <p>
+            Chhatrapati Sambhajinagar is a historic and culturally rich city in Maharashtra,
+            known for its magnificent monuments, ancient caves, and vibrant heritage.
+            The city has been influenced by Mughal and Maratha history, making it a unique blend of architecture and
+            tradition.
+        </p>
+
+        <p>
+            It is home to world-famous UNESCO heritage sites like Ajanta and Ellora caves,
+            attracting tourists from across the globe. The city is also known as the "City of Gates"
+            due to its strong historical fortifications.
+        </p>
+
+    </section>
+
+    <!-- WEBSITE PURPOSE -->
+    <section>
+        <h2>🎯 Our Purpose</h2>
+
+        <p>
+            This website is designed to provide complete information about Sambhajinagar,
+            including its history, tourist destinations, food culture, and travel planning.
+        </p>
+
+        <p>
+            Our aim is to help travelers explore the city easily and plan their trips efficiently.
+        </p>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section>
+        <h2>✨ Website Features</h2>
+
+        <div class="grid">
+
+            <div class="box">📜 Detailed History</div>
+            <div class="box">🌍 Tourist Destinations</div>
+            <div class="box">🍛 Local Food Guide</div>
+            <div class="box">🧭 Smart Trip Planner</div>
+            <div class="box">📷 Photo Gallery</div>
+
+        </div>
+
+    </section>
+
+    <!-- WHY VISIT -->
+    <section>
+        <h2>🌟 Why Visit Sambhajinagar?</h2>
+
+        <div class="grid">
+
+            <div class="box">🏛 Rich Heritage</div>
+            <div class="box">🗿 Ancient Caves</div>
+            <div class="box">🌄 Natural Beauty</div>
+            <div class="box">🛕 Spiritual Places</div>
+
+        </div>
+
+    </section>
+
+    <!-- TEAM -->
+    <section>
+        <h2>👨‍💻 About the creator</h2>
+
+        <div class="team">
+
+            <div class="member">
+                <img src="./Photos/me.jpeg">
+                <h3>Roma Panchal</h3>
+                <p>Web Developer</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Sambhajinagar Tourism Website</p>
+    </footer>
+
+</body>
+
+</html>
