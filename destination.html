@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourism - Sambhajinagar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: url("./Photos/kranti-chowk-1.jpg") center/cover no-repeat fixed;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+        nav {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 80px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 100px;
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* BUTTON */
+        .btn {
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: linear-gradient(45deg, orange, #ff6b6b);
+            color: white;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* DETAILS ANIMATION */
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card.active .details {
+            max-height: 200px;
+            margin-top: 10px;
+        }
+
+        /* STAR */
+        .stars {
+            color: gold;
+            margin: 5px 0;
+        }
+
+        .travel-guide {
+            margin: 60px auto;
+            padding: 70px 100px;
+            max-width: 1100px;
+
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .travel-guide h2 {
+            text-align: center;
+            color: orange;
+            margin-bottom: 40px;
+        }
+
+        /* GRID */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        /* BOX */
+        .guide-box {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .guide-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .guide-box h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .guide-box p {
+            color: #555;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="history.html">📜 History</a></li>
+            <li><a href="#">🌍 Tourism</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>🌍 Explore Sambhajinagar</h1>
+    </div>
+
+    <div class="grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="./Photos/ajanta-caves-2.jpg">
+            <div class="card-content">
+                <h3> Ajanta Caves</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Famous UNESCO site with ancient Buddhist paintings.</p>
+                    <p>📍 100 km from city</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="./Photos/ellora-caves-2.jpg">
+            <div class="card-content">
+                <h3> Ellora Caves</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Rock-cut temples of 3 religions.</p>
+                    <p>📍 30 km</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="./Photos/bibi-ka-maqbara-2.jpg">
+            <div class="card-content">
+                <h3> Bibi Ka Maqbara</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Taj of Deccan monument.</p>
+                    <p>📍 City</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="./Photos/devigir-fort.png">
+            <div class="card-content">
+                <h3> Devgiri Fort</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>One of the strongest forts in India.</p>
+                    <p>📍 15 km</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+            <img src="./Photos/aurangabad-caves.jpg">
+            <div class="card-content">
+                <h3> Aurangabad Caves</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Ancient Buddhist rock-cut caves known for carvings and sculptures.</p>
+                    <p>📍 Near Bibi Ka Maqbara</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+            <img src="./Photos/grishneshwar-2.jpg">
+            <div class="card-content">
+                <h3> Grishneshwar Temple</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>One of the 12 Jyotirlingas of Lord Shiva, known for its spiritual importance.</p>
+                    <p>📍 Near Ellora (30 km)</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="card">
+            <img src="./Photos/bhadra-maruti-2.jpg">
+            <div class="card-content">
+                <h3>Bhadra Maruti</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Located in Khuldabad, this temple is dedicated to Lord Hanuman in a rare sleeping (reclining)
+                        posture. It is one of the only temples in India where Hanuman is seen resting. The temple
+                        attracts thousands of devotees every year.</p>
+                    <p>📍 Location: Khuldabad (25 km)</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="card">
+            <img src="./Photos/museum.jpg">
+            <div class="card-content">
+                <h3>Chhatrapati Shivaji Maharaj Museum</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>This museum showcases the history, weapons, artifacts, and paintings related to Chhatrapati
+                        Shivaji Maharaj and the Maratha Empire. It is a must-visit place to understand the rich heritage
+                        and bravery of Marathas.</p>
+                    <p>📍 Location: City area</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CARD 9 -->
+        <div class="card">
+            <img src="./Photos/himayat-baugh.jpg">
+            <div class="card-content">
+                <h3>Himayat Baugh</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>A historic Mughal garden known for its greenery and peaceful environment. It also houses an
+                        agricultural research center and is ideal for nature lovers and morning walks.</p>
+                    <p>📍 Location: City</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="card">
+            <img src="./Photos/salim-ali-lake.jpg">
+            <div class="card-content">
+                <h3>Salim Ali Lake</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>A beautiful lake and bird sanctuary named after famous ornithologist Salim Ali. It is a perfect
+                        place for bird watching, relaxation, and enjoying nature.</p>
+                    <p>📍 Location: Near Delhi Gate</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="card">
+            <img src="./Photos/goga-baba.webp">
+            <div class="card-content">
+                <h3>Goga Baba Hill</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>A popular spiritual and scenic spot offering panoramic views of the city. It is known for its
+                        peaceful atmosphere and is visited by locals for trekking and relaxation.</p>
+                    <p>📍 Location: Near city outskirts</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="card">
+            <img src="./Photos/buddha-leni.jpeg">
+            <div class="card-content">
+                <h3>Buddha Leni</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Ancient Buddhist caves carved into hills, dating back to the 6th century. These caves feature
+                        beautiful carvings, sculptures, and offer a glimpse into ancient Buddhist culture.</p>
+                    <p>📍 Location: Near Bibi Ka Maqbara</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CARD 13 -->
+        <div class="card">
+            <img src="./Photos/jaykawadi-dam.jpg">
+            <div class="card-content">
+                <h3>Jayakwadi Dam</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>One of the largest earthen dams in Maharashtra built on the Godavari River. It also supports a
+                        bird sanctuary and offers scenic sunset views.</p>
+                    <p>📍 Location: Paithan (50 km)</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 14 -->
+        <div class="card">
+            <img src="./Photos/panchakki-2.jpg">
+            <div class="card-content">
+                <h3>Panchakki</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>An ancient water mill built during the Mughal period. It uses an underground water channel system
+                        to generate energy, showcasing brilliant engineering of that time.</p>
+                    <p>📍 Location: City</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="card">
+            <img src="./Photos/lonar-lake.webp">
+            <div class="card-content">
+                <h3>Lonar Lake</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Lonar Lake is a unique crater lake formed by a meteor impact thousands of years ago.
+                        It is known for its rare ecosystem, saline water, and scientific importance.</p>
+                    <p>📍 Lonar (140 km)</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 16 -->
+        <div class="card">
+            <img src="./Photos/mhaismal.avif">
+            <div class="card-content">
+                <h3>Mhaismal</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>A beautiful hill station known for cool climate, foggy weather, and scenic valleys. It is a
+                        perfect getaway during monsoon and summer.</p>
+                    <p>📍 Location: 40 km from city</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="card">
+            <img src="./Photos/gautala.jpg">
+            <div class="card-content">
+                <h3>Gautala Wildlife Sancturay</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    p>A protected forest area rich in biodiversity, waterfalls, and trekking routes. It is home to
+                    various animals, birds, and plants, making it ideal for nature and wildlife enthusiasts.</p>
+                    <p>📍 Location: Near Kannad (65 km)</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CARD 16 -->
+        <div class="card">
+            <img src="./Photos/paithan.webp">
+            <div class="card-content">
+                <h3>Sant Eknath Samadhi Mandir</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Samadhi Mandir of Sant Eknath, a revered saint of Maharashtra, known for his teachings and
+                        devotion.
+                        The place is peaceful and holds great spiritual importance.</p>
+                    <p>📍 Paithan (50 km)</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CARD 17 -->
+        <div class="card">
+            <img src="./Photos/siddharth-garden.webp">
+            <div class="card-content">
+                <h3>Siddharth Garden</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Popular garden and zoo known for greenery, animals, and family-friendly atmosphere.
+                        It is a great place for relaxation and recreation.</p>
+                    <p>📍 City</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="./Photos/newasa.avif">
+            <div class="card-content">
+                <h3>Datta Mandir</h3>
+                <button class="btn" onclick="toggleCard(this)">Explore More</button>
+
+                <div class="details">
+                    <p>Famous temple associated with Sant Dnyaneshwar, where the sacred text Dnyaneshwari was written.
+                        It holds great spiritual and historical importance.</p>
+                    <p>📍 Newasa (near Sambhajinagar)</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <section class="travel-guide">
+
+        <h2>🧭 Travel Guide & Tips</h2>
+
+        <div class="guide-grid">
+
+            <div class="guide-box">
+                <h3>📅 Best Time to Visit</h3>
+                <p>October to March is the best time to explore Sambhajinagar due to pleasant weather.</p>
+            </div>
+
+            <div class="guide-box">
+                <h3>🚗 How to Reach</h3>
+                <p>Well connected by road, rail and air with major cities like Pune, Mumbai and Nashik.</p>
+            </div>
+
+            <div class="guide-box">
+                <h3>🍛 Local Food</h3>
+                <p>Try famous dishes like Naan Qalia, Tahri rice, and Mughlai sweets.</p>
+            </div>
+
+            <div class="guide-box">
+                <h3>⚠ Travel Tips</h3>
+                <p>Carry water, wear comfortable shoes, and visit early morning for less crowd.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Tourism Page</p>
+    </footer>
+
+    <script>
+        function toggleCard(btn) {
+            let card = btn.closest(".card");
+
+            // close others (optional premium feature)
+            document.querySelectorAll(".card").forEach(c => {
+                if (c !== card) c.classList.remove("active");
+            });
+
+            card.classList.toggle("active");
+        }
+    </script>
+
+</body>
+
+</html>
